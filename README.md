@@ -4,6 +4,7 @@ Minimal CLI for fetching lyrics from `genius.com` on a terminal
 
 ## Installation
 
+Just clone the repo and launch this ruby script. No API key required !
 ```bash
 gem install nokogiri
 ```
