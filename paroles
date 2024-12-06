@@ -1,0 +1,54 @@
+#!/bin/ruby
+
+require 'net/http'
+require 'json'
+require 'nokogiri'
+require 'uri'
+
+def fetch(url)
+  uri = URI(url)
+  response = Net::HTTP.get(uri)
+  response
+end
+
+def print_lyrics(header, lyrics)
+  puts "── #{header} ──"
+  lyrics.each_line do |line|
+    if line.include?("[") && line.include?("]")
+      puts "\033[36m#{line}\033[0m" 
+    else
+      puts line
+    end
+  end
+end
+
+def print_song(song)
+  html_content = fetch(song['url'])
+  html_doc = Nokogiri::HTML(html_content)
+
+  html_doc.search('br').each do |br|
+    br.replace("\n")
+  end
+
+  text_with_newlines = html_doc.text
+  lyrics_container = html_doc.css('div[data-lyrics-container]')
+  lyrics = lyrics_container.map(&:text).join("\n")
+  print_lyrics("#{song['title']} - #{song['artist_names']}", lyrics)
+end
+
+def search(query)
+  encoded_query = URI.encode_www_form_component(query)
+  url = "https://genius.com/api/search/multi?per_page=5&q=#{encoded_query}"
+  response = fetch(url)
+  result = JSON.parse(response)
+  result['response']['sections'][1]['hits'][0]['result']
+end
+
+if ARGV.empty?
+  puts "\033[31mSong title not given\033[0m"
+  exit(1)
+end
+
+song = search(ARGV.join(' '))
+print_song(song)
+
