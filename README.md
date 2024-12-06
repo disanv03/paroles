@@ -1,6 +1,6 @@
 # Paroles
 
-Minimal CLI for grabing lyrics from `genius.com` 
+Minimal CLI for fetching lyrics from `genius.com` on a terminal
 
 ## Installation
 
@@ -25,6 +25,6 @@ require 'uri'
 paroles get lucky
 ```
 
-## Credits
+## Credits
 
 That the ruby version of GeniusCTL based on `genius.com`
