@@ -28,4 +28,4 @@ paroles get lucky
 
 ## Credits
 
-That the ruby version of GeniusCTL based on `genius.com`
+That the ruby version of [GeniusCTL](https://github.com/matisiekpl/geniusctl) based on `genius.com`
