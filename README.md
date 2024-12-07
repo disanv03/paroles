@@ -1,6 +1,7 @@
 # Paroles
 
-Minimal CLI for fetching lyrics from `genius.com` on a terminal
+Minimal CLI for fetching lyrics from `genius.com`
+Enjoy getting lyrics very fast and sing along your favorite song.
 
 ## Installation
 
@@ -11,6 +12,7 @@ gem install nokogiri
 
 ```ruby
 # Necessary libraries:
+# Most of them are ruby built-in libs
 require 'json'
 require 'net/http'
 require 'nokogiri'
