@@ -1,14 +1,13 @@
 # Paroles
 
-Minimal CLI for fetching lyrics from `genius.com`
-Enjoy getting lyrics very fast and sing along your favorite song.
+Minimal CLI for fetching lyrics from `genius.com`.
+
+
+You can get lyrics very quiclky and sing along with your favorite song.
 
 ## Installation
 
 Just clone the repo and launch this ruby script. No API key required !
-```bash
-gem install nokogiri
-```
 
 ```ruby
 # Necessary libraries:
@@ -17,6 +16,10 @@ require 'json'
 require 'net/http'
 require 'nokogiri'
 require 'uri'
+```
+
+```bash
+gem install nokogiri
 ```
 
 ## Usage
@@ -30,4 +33,4 @@ paroles get lucky
 
 ## Credits
 
-That the ruby version of [GeniusCTL](https://github.com/matisiekpl/geniusctl) based on `genius.com`
+That the ruby version of [GeniusCTL](https://github.com/matisiekpl/geniusctl) feel free to have a look.
