@@ -20,6 +20,7 @@ require 'uri'
 
 ```bash
 gem install nokogiri
+chmod +x paroles
 ```
 
 ## Usage
